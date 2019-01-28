@@ -5,13 +5,15 @@
 
     <array name="drawer_menu_titles">
         <item>Home</item><!--0-->
-        <item>Noti</item><!--1-->
-        <item>third</item><!--7-->
-        <item>four</item><!--8-->
-        <item>five</item>
-        <item>six</item>
-        <item>seven</item>
+        <item>Notification</item><!--1-->
+        <item>Profile</item><!--7-->
+        <item>Setting</item><!--8-->
     </array>
+
+
+    <!--Commom string-->
+    <string name="please_wait">Loading</string>
+    <string name="error">Error</string>
 
 
     <string name="drawer_open">Drawer open</string>
@@ -21,4 +23,39 @@
     <!--Screen Title-->
     <string name="txt_my_profile">Profile</string>
     <string name="txt_home">Home</string>
+    <string name="txt_setting">Setting</string>
+
+
+    <!--Login screen-->
+    <string name="txt_email">Email</string>
+    <string name="txt_password_hint">Password</string>
+    <string name="txt_forgot_password">Forgot?</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_or">or</string>
+    <string name="txt_login_facebook">Login with facebook</string>
+    <string name="txt_facebook">Facebook</string>
+    <string name="txt_facebook_with">With</string>
+    <string name="txt_sign_up_link">Sign up</string>
+    <string name="txt_passwrd_length">* Password must be at least 6 characters long</string>
+    <string name="txt_error_msg">There\'s been a mix up, please try again</string>
+    <string name="txt_valid_mobile_number">Oh no, that number doesn\'t seem to be working - please enter a valid Hong Kong number.</string>
+    <string name="server_error">Server Error</string>
+    <string name="txt_valdation_empty_mobile_no">Please enter your mobile number.</string>
+    <string name="txt_valdation_empty_password">Please enter password.</string>
+    <string name="ok">ok</string>
+    <string name="enter_employeeid">Please enter employeeId</string>
+    <string name="enter_password">Enter password</string>
+    <string name="enter_valid_employeeid">Please enter valide mailId</string>
+
+
+    <!--CHANGE PASSWORD SCREEN-->
+    <string name="submit">Submit</string>
+    <string name="old_password">Old Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="enter_old_password">Enter old password</string>
+    <string name="enter_confirm_password">Enter confirm password</string>
+    <string name="confirm_password_match">Confirm password must match password</string>
+    <string name="new_password">New Password</string>
+    <string name="change_password">Change Password</string>
+
 </resources>

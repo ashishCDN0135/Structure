@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-
-
-    <color name="white">#ffffff</color>
     <color name="green_light">#697D5D</color>
     <color name="gray_light">#989898</color>
     <color name="text_gray">#666666</color>
     <color name="yellow">#8E7536</color>
     <color name="text_green">#FFE7A1</color>
+
+    <!--Common App colors-->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="light_black">#80000000</color>
+    <color name="semi_black">#BC000000</color>
+    <color name="app_theme_color_green">#2CD5C4</color>
+    <color name="app_theme_color_red">#FB637E</color>
+    <color name="disable_bg_color">#4D8d8d8d</color>
+    <color name="enable_text_color">#4D8d8d8d</color>
+
+    <!--Login screen Color-->
+    <color name="btn_color_red_light">#FB637E</color>
+    <color name="btn_color_red_light_pressed">#BFFB637E</color>
+    <color name="btn_color_login_pressed">#BFFB637E</color>
+    <color name="btn_color_facebook">#005596</color>
+    <color name="btn_color_facebook_pressed">#BF005596</color>
 
 </resources>

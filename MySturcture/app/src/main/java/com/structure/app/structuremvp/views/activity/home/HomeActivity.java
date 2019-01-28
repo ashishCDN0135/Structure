@@ -12,6 +12,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -24,6 +25,8 @@ import com.structure.app.structuremvp.utils.Utils;
 import com.structure.app.structuremvp.views.adapter.LeftDrawerListAdapter;
 import com.structure.app.structuremvp.views.base.BaseActivity;
 import com.structure.app.structuremvp.views.fragment.home.HomeFragment;
+import com.structure.app.structuremvp.views.fragment.profile.ProfileFragment;
+import com.structure.app.structuremvp.views.fragment.setting.SettingFragment;
 
 
 import java.util.ArrayList;
@@ -47,8 +50,6 @@ public class HomeActivity extends BaseActivity implements LeftDrawerListAdapter.
     private Fragment fragment;
     public TextView title_tv;
     private static boolean activityVisible;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,6 +99,7 @@ public class HomeActivity extends BaseActivity implements LeftDrawerListAdapter.
     @Override
     protected void onResume() {
         super.onResume();
+
         try {
             fragment = getSupportFragmentManager().findFragmentById(R.id.home_layout_container);
             if (fragment != null)
@@ -125,8 +127,7 @@ public class HomeActivity extends BaseActivity implements LeftDrawerListAdapter.
 
     private final int[] menuItemIcons = new int[]{
             android.R.drawable.btn_plus,
-            android.R.drawable.btn_plus,  android.R.drawable.btn_plus,
-            android.R.drawable.btn_plus,  android.R.drawable.btn_plus,
+            android.R.drawable.btn_plus,
             android.R.drawable.btn_plus,
             android.R.drawable.btn_plus
     };
@@ -134,8 +135,7 @@ public class HomeActivity extends BaseActivity implements LeftDrawerListAdapter.
     private final int[] menuItemIconsSelected = new int[]{
 
             android.R.drawable.btn_plus,
-            android.R.drawable.btn_plus,  android.R.drawable.btn_plus,
-            android.R.drawable.btn_plus,  android.R.drawable.btn_plus,
+            android.R.drawable.btn_plus,
             android.R.drawable.btn_plus,
             android.R.drawable.btn_plus
     };
@@ -211,6 +211,7 @@ public class HomeActivity extends BaseActivity implements LeftDrawerListAdapter.
         // Sync the toggle state after onRestoreInstanceState has occurred.
         if (mDrawerToggle != null)
             mDrawerToggle.syncState();
+
     }
 
 
@@ -244,11 +245,11 @@ public class HomeActivity extends BaseActivity implements LeftDrawerListAdapter.
                 break;
             case 2://
                 setDrawerHover(position);
-
+                Utils.replaceFragment(HomeActivity.this, new ProfileFragment());
                 break;
             case 3: //
                 setDrawerHover(position);
-
+                Utils.replaceFragment(HomeActivity.this, new SettingFragment());
                 break;
             case 4://
                   setDrawerHover(position);

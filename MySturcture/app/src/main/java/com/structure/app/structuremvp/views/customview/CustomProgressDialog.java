@@ -1,8 +1,6 @@
 package com.structure.app.structuremvp.views.customview;
 
-/**
- * Created by ankurrawal on 9/10/17.
- */
+
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -17,7 +15,7 @@ import com.structure.app.structuremvp.R;
 
 
 /**
- * Created by Ankur Rawal on 21/11/16.
+ *
  * <p>
  * CustomProgressDialog displays 'ProgressDialog' widget with given custom view.
  */
@@ -38,8 +36,8 @@ public class CustomProgressDialog extends Dialog {
         if (!((Activity) mContext).isFinishing()) {
             super.show();
             View view = LayoutInflater.from(mContext).inflate(R.layout.loader_layout, null);
-         //   AppCompatTextView loaderMsg = (AppCompatTextView) view.findViewById(R.id.loader_msg);
-          //  loaderMsg.setText(message);
+           AppCompatTextView loaderMsg = (AppCompatTextView) view.findViewById(R.id.loader_msg);
+            loaderMsg.setText(message);
 
             setContentView(view);
         }

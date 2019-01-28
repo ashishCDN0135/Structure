@@ -12,6 +12,9 @@ public class Pref {
     private static final String EMPLOYEE_ID = "employee_id";
     private static final String LOGIN_PASSWORD = "login_password";
 
+    public static final String REMEMBER_ME = "remember_me";
+    public static final String IS_LOGIN = "is_login";
+
 
     /**
      * This method returns instance of shared preferences.

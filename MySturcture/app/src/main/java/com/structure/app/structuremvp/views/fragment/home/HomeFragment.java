@@ -48,22 +48,30 @@ public class HomeFragment extends BaseFragment implements DialogClickListener {
         binding = DataBindingUtil.inflate(inflater, R.layout.home_fragment_layout, container, false);
         viewModel = ViewModelProviders.of(this).get(HomeFragmentViewModel.class);
         initializeViews(binding.getRoot());
-        testDatabaseQuery();
+        //testDatabaseQuery();
         return binding.getRoot();
     }
 
 
+/*
     public void testDatabaseQuery(){
         databaseModelBeans=new ArrayList<>();
         joinBeans=new ArrayList<>();
         databaseModelBeans.add(new DatabaseModelBean("567","text1","ashu"));
-        databaseModelBeans.add(new DatabaseModelBean("454","text2","shiv"));
+        */
+/*databaseModelBeans.add(new DatabaseModelBean("454","text2","shiv"));
         databaseModelBeans.add(new DatabaseModelBean("675","text3","ankur"));
-        databaseModelBeans.add(new DatabaseModelBean("345","text4","akash"));
+        databaseModelBeans.add(new DatabaseModelBean("345","text4","akash"));*//*
+
+
+
 
         joinBeans.add(new JoinBean("567","ashu description listed here"));
         joinBeans.add(new JoinBean("454","shiv description listed here"));
         joinBeans.add(new JoinBean("675","ankur description listed here"));
+
+        MyApp.getInstance().getDaoSession().getDatabaseModelBeanDao().deleteAll();
+        MyApp.getInstance().getDaoSession().getJoinBeanDao().deleteAll();
 
         MyApp.getInstance().getDaoSession().getDatabaseModelBeanDao().insertOrReplaceInTx(databaseModelBeans);
         MyApp.getInstance().getDaoSession().getJoinBeanDao().insertOrReplaceInTx(joinBeans);
@@ -87,22 +95,21 @@ public class HomeFragment extends BaseFragment implements DialogClickListener {
                 .where(JoinBeanDao.Properties.Id.eq("675")).unique();
         MyApp.getInstance().getDaoSession().getJoinBeanDao().delete(modelBean1);
 
-/*
         QueryBuilder<DatabaseModelBean> queryBuilder = MyApp.getInstance().getDaoSession().getDatabaseModelBeanDao().queryBuilder();
         queryBuilder.join(JoinBean.class, JoinBeanDao.Properties.Id)
                 .where(JoinBeanDao.Properties.Id.eq("675"));
-        List<DatabaseModelBean> users = queryBuilder.list();*/
+        List<DatabaseModelBean> users = queryBuilder.list();
 
         QueryBuilder<DatabaseModelBean> queryBuilder = MyApp.getInstance().getDaoSession().getDatabaseModelBeanDao().queryBuilder();
         queryBuilder.join(DatabaseModelBeanDao.Properties.Id, JoinBean.class, JoinBeanDao.Properties.Id);
         List<DatabaseModelBean> users = queryBuilder.list();
 
         for (int i=0;i<users.size();i++){
-            Log.e("data",""+users.get(i).getComment()+" "+
+            Log.e("join",""+users.get(i).getComment()+" "+
                     users.get(i).getText()+" "+
                     users.get(i).getJoinBean().getDescription());
         }
-       /* DatabaseModelBean modelBean1 = MyApp.getInstance().getDaoSession().getDatabaseModelBeanDao().queryBuilder()
+        DatabaseModelBean modelBean1 = MyApp.getInstance().getDaoSession().getDatabaseModelBeanDao().queryBuilder()
                 .where(DatabaseModelBeanDao.Properties.Id.eq("345")).unique();
         modelBean1.setComment("Vijay Vishw Trianga");
         MyApp.getInstance().getDaoSession().getDatabaseModelBeanDao().update(modelBean1);
@@ -115,8 +122,9 @@ public class HomeFragment extends BaseFragment implements DialogClickListener {
         for (int i=0;i<databaseModelBeansFromDb.size();i++){
             Log.e("dataAfterUpdate",""+databaseModelBeansFromDb.get(i).getComment()+" "+
                     databaseModelBeansFromDb.get(i).getText());
-        }*/
+        }
     }
+*/
 
     @Override
     public void initializeViews(View rootView) {

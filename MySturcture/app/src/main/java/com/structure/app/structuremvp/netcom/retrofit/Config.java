@@ -1,12 +1,25 @@
 package com.structure.app.structuremvp.netcom.retrofit;
+
+
+import com.structure.app.structuremvp.BuildConfig;
+
 public interface Config {
 
-    public static final String BASE_URL = "";
+    /*
+    *
+    * BASE URL FOR SERVER COMMUNICATION
+    *
+    * */
+    public static final String BASE_URL = BuildConfig.BASE_URL;
 
     /**
-     * Login
+     * API NAMES
      */
     String LOGIN_URL = "login";
+    String FORGOT_PASSWORD_URL = "forgotpassword";
+    String CHANGE_PASSWORD_URL = "changepassword";
+
+
 
 
 }

@@ -2,15 +2,17 @@ package com.structure.app.structuremvp.utils;
 
 import android.Manifest;
 
-/**
- * Created by ankurrawal on 22/8/18.
- */
+import com.structure.app.structuremvp.BuildConfig;
 public interface AppUtils {
 
     String[] STORAGE_PERMISSIONS = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
     String[] STORAGE_CAMERA_PERMISSIONS = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
     String[] LOCATION_PERMISSIONS = new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
 
+    String os="android";
+    String versionName= BuildConfig.VERSION_NAME;
+    String REQUEST="request";
+    String RESPONSE="response";
     /**
      * login keys
      */
@@ -20,6 +22,8 @@ public interface AppUtils {
     int empty_old_password = 104;
     int empty_confirm_password = 105;
     int match_confirm_password = 106;
+    int password_length = 107;
+
 
     /**
      * Intent request code

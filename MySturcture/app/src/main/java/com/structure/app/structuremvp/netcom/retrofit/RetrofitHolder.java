@@ -21,14 +21,14 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- *
+ * Initializing retrofit
  */
 public class RetrofitHolder {
 
     public static final int TIMEOUT = 60;
+    private static AppStructureAPI service;
     private Context context;
     private Retrofit retrofit;
-    private static KeyKeepAPI service;
 
 
     public RetrofitHolder(Context context) {
@@ -36,6 +36,9 @@ public class RetrofitHolder {
         initService();
     }
 
+    public static AppStructureAPI getService() {
+        return service;
+    }
 
     private void initService() {
         if (retrofit == null) {
@@ -51,7 +54,7 @@ public class RetrofitHolder {
                     .build();
 
         }
-        service = retrofit.create(KeyKeepAPI.class);
+        service = retrofit.create(AppStructureAPI.class);
 
     }
 
@@ -74,7 +77,6 @@ public class RetrofitHolder {
         return okHttpClient.build();
     }
 
-
     // creating a TrustManager that trusts the CAs in our KeyStore
     private TrustManagerFactory createTrustManagerCAs(KeyStore keyStore) {
         String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
@@ -92,11 +94,6 @@ public class RetrofitHolder {
         }
         return managerFactory;
     }
-
-    public static KeyKeepAPI getService() {
-        return service;
-    }
-
 
     /**
      * set header in need

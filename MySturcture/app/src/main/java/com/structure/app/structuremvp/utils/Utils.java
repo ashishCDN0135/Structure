@@ -49,7 +49,6 @@ import com.structure.app.structuremvp.application.MyApp;
 import com.structure.app.structuremvp.interfaces.DialogClickListener;
 import com.structure.app.structuremvp.model.bean.LoginResponseBean;
 import com.structure.app.structuremvp.netcom.Keys;
-import com.structure.app.structuremvp.preferences.Pref;
 import com.structure.app.structuremvp.views.activity.home.HomeActivity;
 import com.structure.app.structuremvp.views.base.BaseActivity;
 import com.structure.app.structuremvp.views.customview.CustomProgressDialog;
@@ -103,6 +102,17 @@ public class Utils {
         pattern = Pattern.compile(EMAIL_PATTERN);
         matcher = pattern.matcher(email);
         return matcher.matches();
+    }
+
+    public static boolean isValidPasswordLength(String number) {
+       boolean isLengthValid;
+        if(number.length()<=5){
+            isLengthValid= false;
+        }
+        else {
+            isLengthValid= true;
+        }
+        return isLengthValid;
     }
 
     public static Uri getImageUri(Context context, Bitmap inImage) {
@@ -1761,6 +1771,7 @@ public class Utils {
         return Keys.TYPE_ANDROID;
     }
 
+/*
     public static LoginResponseBean.Result getUserDetail(Context context) {
         LoginResponseBean.Result bean = null;
         String data = Pref.getUserDetail(context);
@@ -1771,20 +1782,7 @@ public class Utils {
         }
         return bean;
     }
+*/
 
-    public static String getAssetType(int assetType) {
-        String type = "N/A";
-        switch (assetType) {
-
-            case 1:
-                type = "New";
-                break;
-            case 2:
-                type = "Repair";
-                break;
-
-        }
-        return type;
-    }
 
 }

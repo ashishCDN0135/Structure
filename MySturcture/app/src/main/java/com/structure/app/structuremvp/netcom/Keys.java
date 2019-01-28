@@ -1,8 +1,11 @@
 package com.structure.app.structuremvp.netcom;
 
-/**
- * Created by ankurrawal on 22/8/18.
- */
+/*
+*
+* API PARAM KEYS
+*
+*
+* */
 public interface Keys {
 
     String API_KEY = "cdnsol";
@@ -23,14 +26,14 @@ public interface Keys {
     /*API keys Below*/
 
     /**
-     * Login
+     * Login API PARAM
      */
     String EMAIL = "email";
     String PASSWORD = "password";
 
 
     /**
-     * change password
+     * change password PARAM
      */
     String EMPLOYEE_ID = "employee_id";
     String OLD_PASSWORD = "old_password";
@@ -39,14 +42,4 @@ public interface Keys {
     String IS_MY_ASSETS = "is_my_assets";
 
 
-    /**
-     * qr code
-     */
-    String QR_CODE_NUMBER = "qr_code_number";
-
-
-    /**
-     * approved request
-     */
-    String REQ_ID = "request_id";
 }
