@@ -8,19 +8,24 @@ import android.databinding.DataBindingUtil;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.google.gson.Gson;
 import com.structure.app.structuremvp.R;
 import com.structure.app.structuremvp.application.MyApp;
 import com.structure.app.structuremvp.databinding.ActivityLoginBinding;
+import com.structure.app.structuremvp.db.DbHalper;
 import com.structure.app.structuremvp.model.bean.LoginResponseBean;
+import com.structure.app.structuremvp.model.bean.OrmBeanList;
 import com.structure.app.structuremvp.preferences.Pref;
 import com.structure.app.structuremvp.utils.AppUtils;
 import com.structure.app.structuremvp.utils.Utils;
 import com.structure.app.structuremvp.views.activity.forgotpassword.ForgotPasswordActivity;
 import com.structure.app.structuremvp.views.activity.home.HomeActivity;
 import com.structure.app.structuremvp.views.base.BaseActivity;
+
+import java.util.ArrayList;
 
 public class LoginActivity extends BaseActivity {
 

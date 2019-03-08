@@ -15,11 +15,13 @@ import android.view.ViewGroup;
 import com.structure.app.structuremvp.R;
 import com.structure.app.structuremvp.application.MyApp;
 import com.structure.app.structuremvp.databinding.HomeFragmentLayoutBinding;
+import com.structure.app.structuremvp.db.DbHalper;
 import com.structure.app.structuremvp.interfaces.DialogClickListener;
 import com.structure.app.structuremvp.model.bean.DatabaseModelBean;
 import com.structure.app.structuremvp.model.bean.DatabaseModelBeanDao;
 import com.structure.app.structuremvp.model.bean.JoinBean;
 import com.structure.app.structuremvp.model.bean.JoinBeanDao;
+import com.structure.app.structuremvp.model.bean.OrmBeanList;
 import com.structure.app.structuremvp.utils.AppUtils;
 import com.structure.app.structuremvp.utils.Utils;
 import com.structure.app.structuremvp.views.base.BaseFragment;
@@ -49,9 +51,45 @@ public class HomeFragment extends BaseFragment implements DialogClickListener {
         viewModel = ViewModelProviders.of(this).get(HomeFragmentViewModel.class);
         initializeViews(binding.getRoot());
         //testDatabaseQuery();
+        //testOrmLite();
         return binding.getRoot();
     }
 
+    /*
+    *
+    * Implemenation for OrmLite
+    *
+    * */
+
+   /* public void testOrmLite(){
+        ArrayList<OrmBeanList>ormBeanLists=new ArrayList<>();
+        ormBeanLists.add(new OrmBeanList("101","bhavesh",
+                "997789","indore","mp"));
+        ormBeanLists.add(new OrmBeanList("102","vikram",
+                "997789","gwalior","mp"));
+        ormBeanLists.add(new OrmBeanList("103","naman",
+                "997789","luknaow","up"));
+
+        DbHalper.getInstance(context).insertCategoryDataList(ormBeanLists);
+
+        ArrayList<OrmBeanList>ormBeanListsFromDB=new ArrayList<>();
+
+        ormBeanListsFromDB=DbHalper.getInstance(context).getCategoryListData();
+
+        for (int i=0;i<ormBeanListsFromDB.size();i++){
+            Log.e("data",""+ormBeanListsFromDB.get(i).getName()+
+                    " "+ormBeanListsFromDB.get(i).getContactNo()+" "+
+                    ormBeanListsFromDB.get(i).getCity());
+        }
+    }*/
+
+
+   /*
+   *
+   *
+   * implementation for GreenDao
+   *
+   * */
 
 /*
     public void testDatabaseQuery(){
